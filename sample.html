@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <!-- download dependency from: https://github.com/webfolderio/lit4browser/releases -->
+   <script src="lit-element.iife.js"></script>
+   <script>
+     document.addEventListener('DOMContentLoaded', () => {
+
+       class HelloWorld extends lit.LitElement {
+
+         render() {
+           return lit.html`<p>Hello, World!</p>`;
+         }
+       }
+
+       customElements.define('hello-world', HelloWorld);       
+
+       window.document.body.innerHTML = '<hello-world></hello-world>';
+     });
+   </script>
+ </head>
+ <body>
+ </body>
+<html>
