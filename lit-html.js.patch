@@ -1,0 +1,26 @@
+--- lit-html.js	2019-09-12 22:33:16.774577700 +0300
++++ lit-html.js.new	2019-09-12 22:33:20.988304200 +0300
+@@ -36,11 +36,22 @@
+ export { removeNodes, reparentNodes } from './lib/dom.js';
+ export { noChange, nothing } from './lib/part.js';
+ export { AttributeCommitter, AttributePart, BooleanAttributePart, EventPart, isIterable, isPrimitive, NodePart, PropertyCommitter, PropertyPart } from './lib/parts.js';
+-export { parts, render } from './lib/render.js';
++export { parts } from './lib/render.js';
++export { render } from './lib/shady-render.js';
+ export { templateCaches, templateFactory } from './lib/template-factory.js';
+ export { TemplateInstance } from './lib/template-instance.js';
+ export { SVGTemplateResult, TemplateResult } from './lib/template-result.js';
+ export { createMarker, isTemplatePartActive, Template } from './lib/template.js';
++export { asyncAppend } from './directives/async-append.js';
++export { asyncReplace } from './directives/async-replace.js';
++export { cache } from './directives/cache.js';
++export { classMap } from './directives/class-map.js';
++export { guard } from './directives/guard.js';
++export { ifDefined } from './directives/if-defined.js';
++export { repeat } from './directives/repeat.js';
++export { styleMap } from './directives/style-map.js';
++export { unsafeHTML } from './directives/unsafe-html.js';
++export { until } from './directives/until.js';
+ // IMPORTANT: do not change the property name or the assignment expression.
+ // This line will be used in regexes to search for lit-html usage.
+ // TODO(justinfagnani): inject version number at build time
