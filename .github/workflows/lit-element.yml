@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build-windows:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
 
@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build
-      run: build.bat
+      run: build.sh
       shell: cmd
 
     - name: Archive lit-element
