@@ -1,10 +1,10 @@
 npm install -f -g rollup
 npm install -f -g typescript
 curl -L "https://github.com/Polymer/lit-element/archive/v2.3.1.zip" --output v2.3.1.zip
-tar xf v2.3.1.zip
+unzip v2.3.1.zip
 move lit-element-2.3.1 lit-element
 curl -L "https://github.com/Polymer/lit-html/archive/v1.2.1.zip" --output v1.2.1.zip
-tar xf v1.2.1.zip
+unzip v1.2.1.zip
 move lit-html-1.2.1 lit-element
 cd lit-html
 npm install -f --no-audit
