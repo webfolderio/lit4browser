@@ -1,0 +1,16 @@
+version: 1.0.'{build}'
+
+configuration: Release
+
+build_script:
+  - cmd: call build.bat
+
+artifacts:
+  - path: dist/lit-html-1.2.1.js
+    name: lit-html esm
+  - path: dist/lit-html-1.2.1.iife.js
+    name: lit-html iife
+  - path: dist/lit-element-2.3.1.js
+    name: lit-html esm
+  - path: dist/lit-element-2.3.1.iife.js
+    name: lit-html iife

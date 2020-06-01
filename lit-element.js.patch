@@ -1,18 +1,22 @@
---- lit-element.js	2019-09-12 22:40:37.970554100 +0300
-+++ lit-element.js.new	2019-09-12 22:40:44.648217600 +0300
-@@ -11,12 +11,12 @@
-  * subject to an additional IP rights grant found at
-  * http://polymer.github.io/PATENTS.txt
+--- lit-element.js	2020-06-01 12:33:02.000000000 +0300
++++ lit-element.js.new	2020-06-01 12:33:08.000000000 +0300
+@@ -50,17 +50,17 @@
+  * `LitElement` extends [[`UpdatingElement`]] and adds lit-html templating.
+  * The `UpdatingElement` class is provided for users that want to build
+  * their own custom element base classes that don't use lit-html.
+  *
+  * @packageDocumentation
   */
--import { TemplateResult } from 'lit-html';
 -import { render } from 'lit-html/lib/shady-render.js';
-+import { TemplateResult } from '../dist/lit-html.js';
 +import { render } from '../dist/lit-html.js';
  import { UpdatingElement } from './lib/updating-element.js';
  export * from './lib/updating-element.js';
  export * from './lib/decorators.js';
 -export { html, svg, TemplateResult, SVGTemplateResult } from 'lit-html/lit-html.js';
-+export { html, svg, TemplateResult, SVGTemplateResult, asyncAppend, asyncReplace, cache, classMap, guard, ifDefined, repeat, styleMap, unsafeHTML, until } from '../dist/lit-html.js';
- import { supportsAdoptingStyleSheets } from './lib/css-tag.js';
++export { html, svg, DefaultTemplateProcessor, directive, isDirective, removeNodes, reparentNodes, noChange, nothing, AttributeCommitter, AttributePart, BooleanAttributePart, EventPart, isIterable, isPrimitive, NodePart, PropertyCommitter, PropertyPart, parts, render, templateCaches, TemplateInstance, SVGTemplateResult, TemplateResult, createMarker, isTemplatePartActive, Template, asyncAppend, asyncReplace, cache, classMap, guard, ifDefined, repeat, styleMap, unsafeHTML, until } from '../dist/lit-html.js';
+ import { supportsAdoptingStyleSheets, unsafeCSS } from './lib/css-tag.js';
  export * from './lib/css-tag.js';
  // IMPORTANT: do not change the property name or the assignment expression.
+ // This line will be used in regexes to search for LitElement usage.
+ // TODO(justinfagnani): inject version number at build time
+ (window['litElementVersions'] || (window['litElementVersions'] = []))
