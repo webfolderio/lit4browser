@@ -11,11 +11,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: install node
-      run: sudo apt install nodejs
+    - name: install nodejs 12
+      run: sudo apt update && sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 
-    - name: install npm
-      run: sudo apt install npm
+    - name: install latest npm
+      run: sudo apt install npm && npm install npm@latest -g
 
     - name: Build
       run: sudo ./build.sh
