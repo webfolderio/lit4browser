@@ -14,3 +14,9 @@ jobs:
     - name: Build
       run: build.bat
       shell: cmd
+
+    - name: Archive lit-element
+      uses: actions/upload-artifact@v1
+      with:
+        name: lit-element
+        path: dist
