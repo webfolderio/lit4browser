@@ -14,6 +14,9 @@ jobs:
     - name: install node
       run: sudo apt install nodejs
 
+    - name: install npm
+      run: sudo apt install npm
+
     - name: Build
       run: build.sh
 
