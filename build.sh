@@ -15,7 +15,7 @@ cd lit-element
 npm install -f --no-audit
 patch --binary lit-element.js < ../lit-element.js.patch
 rollup -c ../lit-element-rollup.config.js --no-treeshake
-move dist/lit-html.js dist/lit-html-1.2.1.js
-move dist/lit-html.iife.js dist/lit-html-1.2.1.iife.js
-move dist/lit-element.js dist/lit-element-2.3.1.js
-move dist/lit-element.iife.js dist/lit-element-2.3.1.iife.js
+mv dist/lit-html.js dist/lit-html-1.2.1.js
+mv dist/lit-html.iife.js dist/lit-html-1.2.1.iife.js
+mv dist/lit-element.js dist/lit-element-2.3.1.js
+mv dist/lit-element.iife.js dist/lit-element-2.3.1.iife.js
