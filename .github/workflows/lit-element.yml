@@ -13,7 +13,6 @@ jobs:
 
     - name: Build
       run: build.sh
-      shell: cmd
 
     - name: Archive lit-element
       uses: actions/upload-artifact@v1
