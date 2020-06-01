@@ -2,6 +2,10 @@ version: 1.0.'{build}'
 
 configuration: Release
 
+environment:
+  matrix:
+  - nodejs_version: "12"
+
 build_script:
   - cmd: call build.bat
 
