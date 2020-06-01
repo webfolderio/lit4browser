@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: install nodejs 12
-      run: sudo apt update && sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+      run: sudo apt update && sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-get install -y nodejs
 
     - name: install latest npm
       run: sudo apt install npm && npm install npm@latest -g
