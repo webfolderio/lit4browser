@@ -21,7 +21,8 @@ npm install -f --no-audit
 npm run-script build
 patch --binary lit-element.js < lit-element.js.patch
 rollup -c lit-element-rollup.config.js --no-treeshake
-mv dist/lit-html.js dist/lit-html-1.2.1.js  
-mv dist/lit-html.iife.js dist/lit-html-1.2.1.iife.js  
-mv dist/lit-element.js dist/lit-element-2.3.1.js  
+cd ..
+mv dist/lit-html.js dist/lit-html-1.2.1.js
+mv dist/lit-html.iife.js dist/lit-html-1.2.1.iife.js
+mv dist/lit-element.js dist/lit-element-2.3.1.js
 mv dist/lit-element.iife.js dist/lit-element-2.3.1.iife.js
