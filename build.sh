@@ -10,6 +10,7 @@ cp lit-html.js.patch lit-html/
 cp lit-html-rollup.config.js lit-html/
 cd lit-html
 npm install -f --no-audit
+npm run-script build
 patch lit-html.js < lit-html.js.patch
 rollup -c lit-html-rollup.config.js --no-treeshake
 cd ..
@@ -17,9 +18,10 @@ cp lit-element-rollup.config.js lit-element/
 cp lit-element.js.patch lit-element/
 cd lit-element
 npm install -f --no-audit
+npm run-script build
 patch --binary lit-element.js < lit-element.js.patch
 rollup -c lit-element-rollup.config.js --no-treeshake
 mv dist/lit-html.js dist/lit-html-1.2.1.js  
 mv dist/lit-html.iife.js dist/lit-html-1.2.1.iife.js  
 mv dist/lit-element.js dist/lit-element-2.3.1.js  
-mv dist/lit-element.iife.js dist/lit-element-2.3.1.iife.js  
+mv dist/lit-element.iife.js dist/lit-element-2.3.1.iife.js

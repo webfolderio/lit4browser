@@ -8,11 +8,13 @@ tar xf v1.2.1.zip
 move lit-html-1.2.1 lit-html
 cd lit-html
 npm install -f --no-audit
+npm run-script build
 patch lit-html.js < ../lit-html.js.patch
 rollup -c ../lit-html-rollup.config.js --no-treeshake
 cd ..
 cd lit-element
 npm install -f --no-audit
+npm run-script build
 patch --binary lit-element.js < ../lit-element.js.patch
 rollup -c ../lit-element-rollup.config.js --no-treeshake
 move dist/lit-html.js dist/lit-html-1.2.1.js
