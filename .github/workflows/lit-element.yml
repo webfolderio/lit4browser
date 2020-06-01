@@ -3,13 +3,16 @@ name: lit-element
 on: [push]
 
 jobs:
-  build-windows:
+  build-lit:
     runs-on: ubuntu-latest
 
     steps:
 
     - name: Checkout
       uses: actions/checkout@v2
+
+    - name: install node
+      run: sudo apt install nodejs
 
     - name: Build
       run: build.sh
