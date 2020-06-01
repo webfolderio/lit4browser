@@ -7,15 +7,17 @@ curl -L "https://github.com/Polymer/lit-html/archive/v1.2.1.zip" --output v1.2.1
 unzip -q v1.2.1.zip
 move lit-html-1.2.1 lit-element
 cp lit-html-rollup.config.js lit-html/
+cp lit-html.js.patch lit-html/
 cd lit-html
 npm install -f --no-audit
-patch lit-html.js < ../lit-html.js.patch
+patch lit-html.js < lit-html.js.patch
 rollup -c lit-html-rollup.config.js --no-treeshake
 cd ..
+cp lit-element.js.patch lit-element/
+cp lit-element-rollup.config.js lit-element/
 cd lit-element
 npm install -f --no-audit
-patch --binary lit-element.js < ../lit-element.js.patch
-cp lit-element-rollup.config.js lit-element/
+patch --binary lit-element.js < lit-element.js.patch
 rollup -c lit-element-rollup.config.js --no-treeshake
 mv dist/lit-html.js dist/lit-html-1.2.1.js
 mv dist/lit-html.iife.js dist/lit-html-1.2.1.iife.js
