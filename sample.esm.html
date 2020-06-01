@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <script type="module">
+     import { LitElement, html } from './dist/lit-element-2.3.1.js';
+
+     document.addEventListener('DOMContentLoaded', () => {
+
+       class HelloWorld extends LitElement {
+
+         render() {
+           return html`<p>Hello, World!</p>`;
+         }
+       }
+
+       customElements.define('hello-world', HelloWorld);       
+
+       window.document.body.innerHTML = '<hello-world></hello-world>';
+     });
+   </script>
+ </head>
+ <body>
+ </body>
+<html>
