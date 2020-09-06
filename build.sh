@@ -19,7 +19,7 @@ cp lit-element.js.patch lit-element/
 cd lit-element
 npm install -f --no-audit
 npm run-script build
-patch lit-element.js < lit-element.js.patch
+patch --verbose --ignore-whitespace --fuzz 3 lit-element.js < lit-element.js.patch
 rollup -c lit-element-rollup.config.js --no-treeshake
 cd ..
 mv dist/lit-html.js dist/lit-html-1.3.0.js
