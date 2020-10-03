@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html>
  <head>
+   <title>lit-element hello world</title>
    <script type="module">
-     import { LitElement, html } from './dist/lit-element-2.4.0.js';
+     import { html } from '../dist/lit-html.js';
+     import { LitElement } from '../dist/lit-element.js';
 
      document.addEventListener('DOMContentLoaded', () => {
 
        class HelloWorld extends LitElement {
 
+        constructor() {
+          super();
+          this.message = 'Hello, world!';
+        }
+
          render() {
-           return html`<p>Hello, World!</p>`;
+           return html`<p>${this.message}</p>`;
          }
        }
 

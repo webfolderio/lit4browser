@@ -1,13 +1,6 @@
---- lit-html.js	2019-09-12 22:33:16.774577700 +0300
-+++ lit-html.js.new	2019-09-12 22:33:20.988304200 +0300
-@@ -36,11 +36,22 @@
- export { removeNodes, reparentNodes } from './lib/dom.js';
- export { noChange, nothing } from './lib/part.js';
- export { AttributeCommitter, AttributePart, BooleanAttributePart, EventPart, isIterable, isPrimitive, NodePart, PropertyCommitter, PropertyPart } from './lib/parts.js';
--export { parts, render } from './lib/render.js';
-+export { parts } from './lib/render.js';
-+export { render } from './lib/shady-render.js';
- export { templateCaches, templateFactory } from './lib/template-factory.js';
+--- lit-html.js	2020-10-03 19:20:14.956566651 +0300
++++ lit-html.js.new	2020-10-03 19:17:38.859090000 +0300
+@@ -40,6 +40,19 @@
  export { TemplateInstance } from './lib/template-instance.js';
  export { SVGTemplateResult, TemplateResult } from './lib/template-result.js';
  export { createMarker, isTemplatePartActive, Template } from './lib/template.js';
@@ -17,9 +10,12 @@
 +export { classMap } from './directives/class-map.js';
 +export { guard } from './directives/guard.js';
 +export { ifDefined } from './directives/if-defined.js';
++export { live } from './directives/live.js';
 +export { repeat } from './directives/repeat.js';
 +export { styleMap } from './directives/style-map.js';
++export { templateContent } from './directives/template-content.js';
 +export { unsafeHTML } from './directives/unsafe-html.js';
++export { unsafeSVG } from './directives/unsafe-svg.js';
 +export { until } from './directives/until.js';
  // IMPORTANT: do not change the property name or the assignment expression.
  // This line will be used in regexes to search for lit-html usage.

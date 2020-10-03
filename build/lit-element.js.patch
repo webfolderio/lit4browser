@@ -1,0 +1,9 @@
+--- lit-element.js	2020-10-02 17:20:44.945002607 +0300
++++ lit-element.js.new	2020-10-02 17:21:12.297351609 +0300
+@@ -1,5 +1,4 @@
+-import { render } from 'lit-html/lib/shady-render.js';
+-export { SVGTemplateResult, TemplateResult, html, svg } from 'lit-html/lit-html.js';
++import { render } from './lit-html.js';
+ 
+ /**
+  * @license
