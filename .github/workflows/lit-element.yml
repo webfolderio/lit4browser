@@ -11,12 +11,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: install nodejs 12
-      run: sudo apt update && sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-get install -y nodejs
-
     - name: Build
       run: |
            cd build
+           ls -l
            sudo ./build.sh
 
     - name: Archive lit-element
