@@ -15,7 +15,7 @@ jobs:
       run: |
            cd build
            ls -l
-           sudo ./build.sh
+           sudo bash build.sh
 
     - name: Archive lit-element
       uses: actions/upload-artifact@v1
