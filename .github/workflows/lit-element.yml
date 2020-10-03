@@ -15,7 +15,7 @@ jobs:
       run: sudo apt update && sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-get install -y nodejs
 
     - name: Build
-      run: cd build && sudo ./build.sh
+      run: sudo ./build/build.sh
 
     - name: Archive lit-element
       uses: actions/upload-artifact@v1
