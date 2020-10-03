@@ -2,7 +2,7 @@
 
 [![Build](https://github.com/webfolderio/lit4browser/workflows/lit-element/badge.svg)](https://github.com/webfolderio/lit4browser/actions)
 
-[lit-element](https://github.com/Polymer/lit-element), [lit-html](https://github.com/Polymer/lit-html) iife & ES modules.
+[lit-element](https://github.com/Polymer/lit-element), [lit-html](https://github.com/Polymer/lit-html), [mobx](https://github.com/mobxjs/mobx), [lit-mobx](https://github.com/adobe/lit-mobx) ES modules.
 
 ## Download
 
