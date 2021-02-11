@@ -28,7 +28,7 @@ rm -f lit-element.js.patch
 cd ..
 curl -L "https://github.com/mobxjs/mobx/archive/mobx@6.1.5.zip" --output 6.1.5.zip
 unzip 6.1.5.zip
-mv mobx-6.1.5 mobx
+mv mobx-mobx-6.1.5 mobx
 cd mobx
 npm install -f --no-audit
 npm run-script build
