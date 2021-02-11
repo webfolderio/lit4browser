@@ -26,9 +26,9 @@ cd dist
 patch --verbose --ignore-whitespace --fuzz 3 lit-element.js < lit-element.js.patch
 rm -f lit-element.js.patch
 cd ..
-curl -L "https://github.com/mobxjs/mobx/archive/6.0.0.zip" --output 6.0.0.zip
-unzip 6.0.0.zip
-mv mobx-6.0.0 mobx
+curl -L "https://github.com/mobxjs/mobx/archive/mobx@6.1.5.zip" --output 6.1.5.zip
+unzip 6.1.5.zip
+mv mobx-6.1.5 mobx
 cd mobx
 npm install -f --no-audit
 npm run-script build
