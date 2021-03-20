@@ -10,6 +10,6 @@
 
 [lit-html.js](https://github.com/webfolderio/lit4browser/releases/download/2.4/lit-html.js) - 104 KB (__1.3.0__, ES module)
 
-[mobx.js](https://github.com/webfolderio/lit4browser/releases/download/2.4/mobx.js) - 161 KB (__6.0.0__, ES module)
+[mobx.js](https://github.com/webfolderio/lit4browser/releases/download/2.4/mobx.js) - 177 KB (__6.1.8__, ES module)
 
 [lit-mobx.js](https://github.com/webfolderio/lit4browser/releases/download/2.4/lit-mobx.js) - 3.4 KB (__1.0.0__, ES module)
