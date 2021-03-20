@@ -31,7 +31,7 @@ curl -L "https://github.com/mobxjs/mobx/archive/refs/tags/mobx@6.1.8.zip" --outp
 unzip 6.1.8.zip
 mv mobx-mobx-6.1.8 mobx
 cd mobx
-yarn run release
+sudo yarn run release
 cp packages/mobx/dist/mobx.esm.development.js ../dist/mobx.esm.development.js
 cp packages/mobx/dist/mobx.esm.development.js ../dist/mobx.esm.development.js.map
 cp packages/mobx/dist/mobx.esm.production.min.js ../dist/mobx.esm.production.min.js
