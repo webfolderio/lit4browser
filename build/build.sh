@@ -26,17 +26,6 @@ cd dist
 patch --verbose --ignore-whitespace --fuzz 3 lit-element.js < lit-element.js.patch
 rm -f lit-element.js.patch
 cd ..
-npm install -g yarn
-curl -L "https://github.com/mobxjs/mobx/archive/refs/tags/mobx@6.1.8.zip" --output 6.1.8.zip
-unzip 6.1.8.zip
-mv mobx-mobx-6.1.8 mobx
-cd mobx
-sudo yarn run release
-cp packages/mobx/dist/mobx.esm.development.js ../dist/mobx.esm.development.js
-cp packages/mobx/dist/mobx.esm.development.js ../dist/mobx.esm.development.js.map
-cp packages/mobx/dist/mobx.esm.production.min.js ../dist/mobx.esm.production.min.js
-cp packages/mobx/dist/mobx.esm.production.min.js ../dist/mobx.esm.production.min.js.map
-cd ..
 curl -L "https://github.com/adobe/lit-mobx/archive/trunk.zip" --output trunk.zip
 unzip trunk.zip
 mv lit-mobx-trunk lit-mobx
