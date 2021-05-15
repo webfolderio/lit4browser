@@ -1,12 +1,14 @@
+
 npm install -f -g rollup
 npm install -f -g typescript
 mkdir -p build
-curl -L "https://github.com/Polymer/lit-element/archive/v2.4.0.zip" --output v2.4.0.zip
-unzip -q v2.4.0.zip
-mv lit-element-2.4.0 lit-element
-curl -L "https://github.com/Polymer/lit-html/archive/v1.3.0.zip" --output v1.3.0.zip
-unzip -q v1.3.0.zip
-mv lit-html-1.3.0 lit-html
+git clone https://github.com/lit/lit-element.git
+git clone https://github.com/lit/lit.git
+mv lit lit-html
+cd lit-html
+git checkout -b lit-html-1.x
+git checkout 39a00486fee64277a630666fde08cddc9a2402c9
+cd ..
 cp lit-html.js.patch lit-html/
 cp lit-html-rollup.config.js lit-html/
 cd lit-html
@@ -26,9 +28,10 @@ cd dist
 patch --verbose --ignore-whitespace --fuzz 3 lit-element.js < lit-element.js.patch
 rm -f lit-element.js.patch
 cd ..
-curl -L "https://github.com/adobe/lit-mobx/archive/trunk.zip" --output trunk.zip
-unzip trunk.zip
-mv lit-mobx-trunk lit-mobx
+git clone https://github.com/adobe/lit-mobx.git
+cd lit-mobx
+git checkout bf88b667ca792574ba7e0b34441cec4abf58eeb8
+cd ..
 cp lit-mobx-rollup.config.js lit-mobx/src/
 cp lit-mobx.js.patch dist/
 cd lit-mobx
