@@ -37,6 +37,9 @@ class TodoElement extends MobxLitElement {
                     list-style: none;
                     padding-left: 0;
                 }
+                .done {
+                    text-decoration: line-through;
+                }
             }`
         ]
     }
@@ -49,11 +52,12 @@ class TodoElement extends MobxLitElement {
 
     render() {
         return html`
-        <input  @change="${(e) => this.txtTodo = e.target.value}">
+        <input  @change="${(e) => this.txtTodo = e.target.value}"
+                @keydown="${(e) => e.key === 'Enter' ? this.todo.add(this.txtTodo) : undefined }">
         <input type="button" value="add" @click="${() => this.todo.add(this.txtTodo)}">
         <ul>
             ${this.todo.todos.map((next, i) => html`
-                <li>${next.value}
+                <li class="${next.done ? 'done' : 'undone'}">${next.value}
                     <input type="button" value="remove" @click="${() => this.todo.remove(i)}">
                     <input type="button" value="done" @click="${() => this.todo.done(i)}">
                 </li>`)

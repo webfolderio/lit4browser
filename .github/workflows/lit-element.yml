@@ -5,6 +5,7 @@ on: [push]
 jobs:
   build-lit:
     runs-on: ubuntu-latest
+    if: "contains(toJSON(github.event.commits.*.message), '[build]')"
 
     steps:
 
