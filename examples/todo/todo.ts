@@ -1,4 +1,4 @@
-import { makeAutoObservable } from '../../dist/mobx.js';
+import { makeAutoObservable, runInAction } from '../../dist/mobx.js';
 import { MobxLitElement } from '../../dist/lit-mobx.js';
 import { html } from '../../dist/lit-html.js';
 import { css } from '../../dist/lit-element.js';
@@ -26,9 +26,11 @@ class TodoItem {
 class Todo {
 
     items: Array<TodoItem>;
+    item: string;
 
     constructor() {
         this.items = [];
+        this.item = '';
         makeAutoObservable(this);
     }
 
@@ -38,6 +40,11 @@ class Todo {
             return;
         }
         this.items.push(new TodoItem(todo));
+        setTimeout(() => {
+            runInAction(() => {
+                this.item = '';
+            });
+        }, 1);
     }
 
     remove(index: number) {
@@ -52,7 +59,6 @@ class Todo {
 class TodoElement extends MobxLitElement {
 
     todo: Todo;
-    item: string;
 
     static get styles() {
         return [
@@ -70,17 +76,18 @@ class TodoElement extends MobxLitElement {
 
     constructor() {
         super();
-        this.item = '';
-        this.todo = new Todo();
+        this.todo = new Todo();        
     }
 
     render() {
         return html`
         <div>item count: ${this.todo.items.length}</div>
-        <input  @change="${(e: any) => this.item = e.target.value}"
-                @keydown="${(e: any) => e.key === 'Enter' ? this.todo.add(this.item = e.target.value) : undefined }">
-        <input type="button" value="add" @click="${() => this.todo.add(this.item)}">
-        <ul>
+        <input
+                .value="${this.todo.item}"
+                @change="${(e: any) =>  runInAction(() => { this.todo.item = e.target.value }) }"
+                @keydown="${(e: any) => e.key === 'Enter' ? this.todo.add(e.target.value) : undefined }">
+        <input  type="button" value="add" @click="${() => this.todo.add(this.todo.item)}">
+        <ul>    
             ${this.todo.items.map((next, i) => html`
                 <li class="${next.done ? 'done' : 'undone'}">${next.value}
                     <input type="button" value="remove" @click="${() => this.todo.remove(i)}">
