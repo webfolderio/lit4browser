@@ -17,7 +17,7 @@ class CounterElement extends MobxLitElement {
 
     render() {
         return html`
-            <input .value="${this.value}" @change="${this.change}">
+            <input value="${this.value}" @change="${this.change}">
             <input type="button" value="+" @click="${this.increment}">
             <input type="button" value="-" @click="${this.decrement}">
         `;
