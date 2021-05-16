@@ -34,17 +34,14 @@ class Todo {
         makeAutoObservable(this);
     }
 
-    add(todo: string) {
+    add(todo: string): boolean {
         if (!todo || todo.trim() === '') {
             alert('empty todo item is not accepted!');
-            return;
+            return false;
         }
         this.items.push(new TodoItem(todo));
-        setTimeout(() => {
-            runInAction(() => {
-                this.item = '';
-            });
-        }, 1);
+        this.item = '';
+        return true;
     }
 
     remove(index: number) {
@@ -79,13 +76,26 @@ class TodoElement extends MobxLitElement {
         this.todo = new Todo();        
     }
 
+    onKeydown(e: any) {
+        if (e.key === 'Enter') {
+            const added = this.todo.add(e.target.value);
+            if (added) {
+                setTimeout(() => {
+                    runInAction(() => {
+                        this.todo.item = '';
+                    });
+                }, 1);
+            }
+        }
+    }
+
     render() {
         return html`
         <div>item count: ${this.todo.items.length}</div>
         <input
                 .value="${this.todo.item}"
                 @change="${(e: any) =>  runInAction(() => { this.todo.item = e.target.value }) }"
-                @keydown="${(e: any) => e.key === 'Enter' ? this.todo.add(e.target.value) : undefined }">
+                @keydown="${(e: any) => this.onKeydown(e) }">
         <input  type="button" value="add" @click="${() => this.todo.add(this.todo.item)}">
         <ul>    
             ${this.todo.items.map((next, i) => html`
